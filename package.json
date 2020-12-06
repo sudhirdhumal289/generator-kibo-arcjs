@@ -1,0 +1,49 @@
+{
+  "name": "generator-kibo-arcjs",
+  "version": "1.0.0",
+  "description": "Yeoman Generator for Kibo Arc.js application",
+  "author": "Sudhir Dhumal",
+  "license": "MIT",
+  "scripts": {
+    "build": "tsc -p .",
+    "test": "mocha src/**/*.t.ts --full-trace --ui bdd --reporter mocha-sonarqube-reporter --reporter-options output=xunit.xml",
+    "coverage": "nyc --reporter lcov --reporter text npm run test",
+    "lint": "eslint 'src/**/*.{js,ts,tsx}' --quiet",
+    "lint-and-fix": "eslint 'src/**/*.{js,ts,tsx}' --quiet --fix"
+  },
+  "files": [
+    "generators"
+  ],
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{js,ts,tsx}": [
+      "eslint --quiet"
+    ]
+  },
+  "keywords": [
+    "yeoman-generator"
+  ],
+  "dependencies": {
+    "simple-git": "^2.24.0",
+    "yeoman-generator": "^4.12.0"
+  },
+  "devDependencies": {
+    "@types/mocha": "^8.0.4",
+    "@types/node": "^14.14.10",
+    "@types/yeoman-generator": "^4.11.3",
+    "@typescript-eslint/eslint-plugin": "^4.9.0",
+    "@typescript-eslint/parser": "^4.9.0",
+    "chai": "^4.2.0",
+    "eslint": "^7.15.0",
+    "husky": "^4.3.4",
+    "lint-staged": "^10.5.3",
+    "mocha": "^8.2.1",
+    "mocha-sonarqube-reporter": "^1.0.2",
+    "nyc": "^15.1.0",
+    "typescript": "^4.1.2"
+  }
+}
