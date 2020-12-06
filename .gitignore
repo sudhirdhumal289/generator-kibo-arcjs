@@ -1,0 +1,15 @@
+# Packages
+node_modules
+
+# IDE Specific folders/files
+*.iml
+.directory
+
+# Application generated folders/files
+logs
+
+# Build time generated folders/files
+xunit.xml
+coverage
+dist
+.nyc_output
